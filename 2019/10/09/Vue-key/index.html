@@ -86,14 +86,17 @@
 
 
 
+<meta name="description" content="这个key属性必须是唯一的标识，给key赋值的内容不能是可变的，原因有3点：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue-key">
+<meta property="og:title" content="Vue-key(v-for中的key)">
 <meta property="og:url" content="http://wangqi7916.github.io/2019/10/09/Vue-key/index.html">
 <meta property="og:site_name" content="wq技术分享">
+<meta property="og:description" content="这个key属性必须是唯一的标识，给key赋值的内容不能是可变的，原因有3点：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-09T09:36:16.919Z">
+<meta property="og:updated_time" content="2019-10-09T09:43:19.039Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue-key">
+<meta name="twitter:title" content="Vue-key(v-for中的key)">
+<meta name="twitter:description" content="这个key属性必须是唯一的标识，给key赋值的内容不能是可变的，原因有3点：">
 
 
 
@@ -129,7 +132,7 @@
 
 
 
-  <title>Vue-key | wq技术分享</title>
+  <title>Vue-key(v-for中的key) | wq技术分享</title>
   
 
 
@@ -273,7 +276,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vue-key</h1>
+          <h1 class="post-title" itemprop="name headline">Vue-key(v-for中的key)</h1>
         
 
         <div class="post-meta">
@@ -328,7 +331,12 @@
       
 
       
-        
+        <h5 id="这个key属性必须是唯一的标识，给key赋值的内容不能是可变的，原因有3点："><a href="#这个key属性必须是唯一的标识，给key赋值的内容不能是可变的，原因有3点：" class="headerlink" title="这个key属性必须是唯一的标识，给key赋值的内容不能是可变的，原因有3点："></a>这个key属性必须是唯一的标识，给key赋值的内容不能是可变的，原因有3点：</h5><a id="more"></a>
+
+<p>1.在写v-for的时候，都需要给元素加上一个key属性</p>
+<p>2.key的主要作用就是用来提高渲染性能的！</p>
+<p>3.key属性可以避免数据混乱的情况出现 （如果元素中包含了有临时数据的元素，如果不用key就会产生数据混乱）</p>
+
       
     </div>
     
@@ -412,8 +420,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -485,6 +502,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#这个key属性必须是唯一的标识，给key赋值的内容不能是可变的，原因有3点："><span class="nav-number">1.</span> <span class="nav-text">这个key属性必须是唯一的标识，给key赋值的内容不能是可变的，原因有3点：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
