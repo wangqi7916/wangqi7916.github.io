@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="wq技术分享">
 <meta property="og:description" content="setState的使用1、setState(updater, [callback])  updater为返回的stateChange对象函数：(state, props) =&amp;gt; stateChange  接受的state和props被保证为最新的2、setState(stateChange, [callback])  stateChange为对象  callback是可选的回调函数，在状态更">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-23T02:40:20.222Z">
+<meta property="og:updated_time" content="2019-10-23T03:11:27.485Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React-setState">
 <meta name="twitter:description" content="setState的使用1、setState(updater, [callback])  updater为返回的stateChange对象函数：(state, props) =&amp;gt; stateChange  接受的state和props被保证为最新的2、setState(stateChange, [callback])  stateChange为对象  callback是可选的回调函数，在状态更">
@@ -366,9 +366,11 @@
       
         <h1 id="setState的使用"><a href="#setState的使用" class="headerlink" title="setState的使用"></a>setState的使用</h1><p>1、setState(updater, [callback])<br>  updater为返回的stateChange对象函数：(state, props) =&gt; stateChange<br>  接受的state和props被保证为最新的<br>2、setState(stateChange, [callback])<br>  stateChange为对象<br>  callback是可选的回调函数，在状态更新且界面更新后执行<br>总结：<br>  对象方式是函数方式的简写方式<br>  如果新状态不依赖于原状态 ==&gt; 使用对象方式<br>  如果新状态依赖于原状态 ==&gt; 使用函数方式<br>  如果需要在setState()后获取最新的状态数据，在第二个callback函数中读取</p>
 <a id="more"></a>
+<h1 id="异步、同步"><a href="#异步、同步" class="headerlink" title="异步、同步"></a>异步、同步</h1><p>1、异步：在react生命周期钩子以及事件回调中<br>2、同步：定时器、原生事件监听、Promise</p>
+<h1 id="关于异步的setState"><a href="#关于异步的setState" class="headerlink" title="关于异步的setState"></a>关于异步的setState</h1><p>1、多次调用，如何处理？<br>  setState({}): 合并更新一次状态，只调用一次render()更新界面—状态更新和界面更新都合并了<br>  setState(fn): 更新多次状态，调用一次render()更新界面—状态更新没有合并，但界面更新合并了<br>2、如何得到异步更新的状态数据？<br>  在setState()的callback回调函数中</p>
 <p><code>state = {</code><br> <code>count: 1</code><br><code>}</code><br><code>test1 = () =&gt; {</code><br>  <code>this.setState(state =&gt; ({</code><br>    <code>count: state.count + 1</code><br>  <code>}))</code><br><code>}</code></p>
 <p><code>test2 = () =&gt; {</code><br>  <code>this.setState({</code><br>    <code>count: 2</code><br>  <code>})</code><br><code>}</code></p>
-<p><code>test3 = () =&gt; {</code><br>  <code>this.setState(state =&gt; ({count: state.count + 1}), () =&gt; {</code><br>    <code>console.log(this.state.count)</code><br>  <code>})</code><br><code>}</code></p>
+<p><code>test3 = () =&gt; {</code><br>  <code>this.setState({count: 2}, () =&gt; {</code><br>    <code>console.log(this.state.count)</code><br>  <code>})</code><br><code>}</code></p>
 
       
     </div>
@@ -545,7 +547,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#setState的使用"><span class="nav-number">1.</span> <span class="nav-text">setState的使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#setState的使用"><span class="nav-number">1.</span> <span class="nav-text">setState的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异步、同步"><span class="nav-number">2.</span> <span class="nav-text">异步、同步</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于异步的setState"><span class="nav-number">3.</span> <span class="nav-text">关于异步的setState</span></a></li></ol></div>
             
 
           </div>
